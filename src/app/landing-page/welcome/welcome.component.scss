@@ -1,0 +1,63 @@
+@import "../../sass/variables";
+@import "../../sass/colors";
+.main {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, #000000 0%, transparent 70%);
+    &-grid {
+        padding: 5rem $side-padding;
+        display: grid;
+        grid-template-columns: 1fr 50rem;
+        grid-template-rows: 1fr 5rem;
+        font-size: $default-font-size;
+        color: $color-grey-0;
+        &-text {
+            font-size: $title-font-size + 2rem;
+            font-weight: bold;
+            color: $color-white;
+            line-height: 1rem;
+            &-blue {
+                font-size: $title-font-size + 2rem;
+                color: $color-primary;
+                font-weight: bold;
+            }
+            &-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            &-description {}
+        }
+        &-image {
+            &-container {
+                grid-row: 1;
+                grid-column: 2;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+        &-button {
+            color: $color-primary;
+            font-size: $default-font-size + 1rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+            &:active {
+                transform: translateY(2px);
+            }
+            &-container {
+                grid-column: 1 / span 2;
+                grid-row: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

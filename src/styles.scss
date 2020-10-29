@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/sass/colors";
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Baloo 2', cursive;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-grey-4;
+    color: $color-white;
+}
+
+.days {
+    font-family: 'Days One', sans-serif;
+}
+
+.baloo {
+    font-family: 'Baloo 2', cursive;
+}

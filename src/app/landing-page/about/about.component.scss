@@ -1,0 +1,116 @@
+@import "../../sass/colors";
+@import "../../sass/variables";
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 5rem;
+    background: $color-grey-2;
+    &-grid {
+        height: 100%;
+        display: grid;
+        padding: 5rem 0;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 10rem 2fr 1fr;
+        &-title {
+            grid-row: 1;
+            grid-column: 1 / span 3;
+            font-size: $title-font-size;
+            text-align: center;
+            font-weight: normal;
+            &-blue {
+                color: $color-primary;
+            }
+        }
+    }
+    &-flex {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row: 2;
+        &--1 {
+            grid-column: 1;
+            .card:hover.card-desc--1 {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        &--2 {
+            grid-column: 2;
+            &:hover~.card-desc--2 {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        &--3 {
+            grid-column: 3;
+            &:hover~.card-desc--3 {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.card {
+    width: 70%;
+    min-width: 40rem;
+    border-radius: 3rem;
+    box-shadow: inset 2rem 2rem 4rem .5rem #1f1f1f, inset -2rem -2rem 4rem .5rem #2e2e2e, 2rem 2rem 4rem .5rem #1f1f1f, -2rem -2rem 4rem .5rem #2e2e2e;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 1fr 8rem;
+    overflow: visible;
+    &-desc {
+        font-size: $default-font-size;
+        opacity: 0;
+        grid-column: 1 / span 3;
+        grid-row: 3;
+        transform: translateX(-100%);
+        transition: all .5s;
+        line-height: 5rem;
+        text-align: justify;
+        color: $color-grey-0;
+        font-weight: normal;
+        padding: 0 10rem;
+    }
+    &-back {
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 2;
+        grid-column: 1;
+        font-size: 6rem;
+        z-index: 0;
+        color: rgba($color: $color-grey-1, $alpha: .2);
+        letter-spacing: .6rem;
+        transition: all .5s;
+    }
+    &-image {
+        width: 20rem;
+        height: 20rem;
+        transition: all .5s;
+        &-flex {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-row: 2;
+            grid-column: 1;
+            z-index: 1;
+        }
+    }
+    &:hover &-image {
+        transform: translateY(-5rem);
+        filter: invert(98%) sepia(68%) saturate(2%) hue-rotate(220deg) brightness(111%) contrast(100%);
+    }
+    &:hover &-back {
+        color: $color-primary;
+        letter-spacing: 1rem;
+        transform: translateX(.5rem) translateY(8rem) scale(1.1);
+        // transform-origin: 30% 50%;
+    }
+}
