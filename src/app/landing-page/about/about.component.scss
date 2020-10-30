@@ -9,11 +9,11 @@
         height: 100%;
         display: grid;
         padding: 5rem 0;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr minmax(40rem, 1fr) 1fr minmax(40rem, 1fr) 1fr minmax(40rem, 1fr) 1fr;
         grid-template-rows: 10rem 2fr 1fr;
         &-title {
             grid-row: 1;
-            grid-column: 1 / span 3;
+            grid-column: 1 / span 7;
             font-size: $title-font-size;
             text-align: center;
             font-weight: normal;
@@ -29,27 +29,6 @@
         align-items: center;
         justify-content: center;
         grid-row: 2;
-        &--1 {
-            grid-column: 1;
-            .card:hover.card-desc--1 {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        &--2 {
-            grid-column: 2;
-            &:hover~.card-desc--2 {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        &--3 {
-            grid-column: 3;
-            &:hover~.card-desc--3 {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
     }
 }
 
@@ -62,10 +41,12 @@
     grid-template-columns: 1fr;
     grid-template-rows: 8rem 1fr 8rem;
     overflow: visible;
+    grid-row: 2;
+    margin: 5rem 0;
     &-desc {
         font-size: $default-font-size;
         opacity: 0;
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 7;
         grid-row: 3;
         transform: translateX(-100%);
         transition: all .5s;
@@ -101,6 +82,27 @@
             grid-row: 2;
             grid-column: 1;
             z-index: 1;
+        }
+    }
+    &--1 {
+        grid-column: 2;
+        &:hover~.card-desc--1 {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    &--2 {
+        grid-column: 4;
+        &:hover~.card-desc--2 {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    &--3 {
+        grid-column: 6;
+        &:hover~.card-desc--3 {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
     &:hover &-image {
