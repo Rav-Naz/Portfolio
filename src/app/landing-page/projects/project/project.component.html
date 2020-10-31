@@ -1,0 +1,22 @@
+<div class="main">
+    <div class="main-body" [style.boxShadow]="'0 0 10rem -2rem ' + project.shadowColor" [style.backgroundColor]="project.backgroundColor">
+        <img class="project-image" [src]="project.imgPath">
+        <div class="project-flex" [style.borderTop]="'1px solid ' + project.areaTopColor">
+            <div class="project-flex-area">
+                <label class="project-flex-area-top" [style.color]="project.areaTopColor">Role</label>
+                <label class="project-flex-area-bottom" [style.color]="project.areaBottomColor">{{project.role}}</label>
+            </div>
+            <div class="project-flex-area">
+                <label class="project-flex-area-top" [style.color]="project.areaTopColor">Name</label>
+                <label class="project-flex-area-bottom" [style.color]="project.areaBottomColor">{{project.title}}</label>
+            </div>
+            <div class="project-flex-area">
+                <label class="project-flex-area-top" [style.color]="project.areaTopColor">Period</label>
+                <label class="project-flex-area-bottom" [style.color]="project.areaBottomColor">{{project.period}}</label>
+            </div>
+        </div>
+        <div class="project-technology">
+            <img class="project-technology--image" *ngFor="let tech of project.technologyStack.slice(0,6)" [src]="technologyStackList[tech]" [style.filter]="project.imageFilter">
+        </div>
+    </div>
+</div>
