@@ -11,6 +11,7 @@ import { TechnologiesComponent } from './landing-page/technologies/technologies.
 import { ProjectsComponent } from './landing-page/projects/projects.component';
 import { ContactComponent } from './landing-page/contact/contact.component';
 import { AboutComponent } from './landing-page/about/about.component';
+import { TileComponent } from './landing-page/technologies/tile/tile.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { AboutComponent } from './landing-page/about/about.component';
     ContactComponent,
     ProjectsComponent,
     TechnologiesComponent,
-    WelcomeComponent
-  ],
+    WelcomeComponent,
+    TileComponent,
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule

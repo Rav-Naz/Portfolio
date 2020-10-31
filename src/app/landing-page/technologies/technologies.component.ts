@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './technologies.component.html',
   styleUrls: ['./technologies.component.scss']
 })
-export class TechnologiesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class TechnologiesComponent {
+  public techName = '';
 }

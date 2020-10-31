@@ -12,12 +12,12 @@
         font-size: $default-font-size;
         color: $color-grey-0;
         &-text {
-            font-size: $title-font-size + 2rem;
+            font-size: $title-font-size;
             font-weight: bold;
             color: $color-white;
             line-height: 1rem;
             &-blue {
-                font-size: $title-font-size + 2rem;
+                font-size: $title-font-size;
                 color: $color-primary;
                 font-weight: bold;
             }

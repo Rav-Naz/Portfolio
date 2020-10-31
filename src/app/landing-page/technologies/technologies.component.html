@@ -1,1 +1,19 @@
-<p>technologies works!</p>
+<section class="main">
+    <div class="main-grid">
+        <app-tile class="tile tile--1" imgSrc="../../../assets/images/js.png" level="Advanced" (mouseenter)="techName = 'JavaScript'"></app-tile>
+        <app-tile class="tile tile--2" imgSrc="../../../assets/images/ts.png" level="Advanced" (mouseenter)="techName = 'TypeScript'"></app-tile>
+        <app-tile class="tile tile--3" imgSrc="../../../assets/images/angular.png" level="Advanced" (mouseenter)="techName = 'Angular'"></app-tile>
+        <app-tile class="tile tile--4" imgSrc="../../../assets/images/nativescript.png" level="Advanced" (mouseenter)="techName = 'Nativescript'"></app-tile>
+        <app-tile class="tile tile--5" imgSrc="../../../assets/images/node-js.png" level="Advanced" (mouseenter)="techName = 'NodeJS'"></app-tile>
+        <app-tile class="tile tile--6" imgSrc="../../../assets/images/mysql.png" level="Intermediate" (mouseenter)="techName = 'MySQL'"></app-tile>
+        <app-tile class="tile tile--7" imgSrc="../../../assets/images/html.png" level="Intermediate" (mouseenter)="techName = 'HTML'"></app-tile>
+        <app-tile class="tile tile--8" imgSrc="../../../assets/images/sass.png" level="Intermediate" (mouseenter)="techName = 'Sass'"></app-tile>
+        <app-tile class="tile tile--9" imgSrc="../../../assets/images/css.png" level="Intermediate" (mouseenter)="techName = 'CSS'"></app-tile>
+        <app-tile class="tile tile--10" imgSrc="../../../assets/images/flutter.png" level="Beginner" (mouseenter)="techName = 'Flutter'"></app-tile>
+        <app-tile class="tile tile--11" imgSrc="../../../assets/images/dart.png" level="Beginner" (mouseenter)="techName = 'Dart'"></app-tile>
+        <app-tile class="tile tile--12" imgSrc="../../../assets/images/python.png" level="Beginner" (mouseenter)="techName = 'Python'"></app-tile>
+        <h1 class="main-title">Which<br>languages<br>and<br>technologies<br>do <span class="main-title-blue">I know?</span></h1>
+        <h2 class="main-selected-technology">{{techName}}</h2>
+
+    </div>
+</section>
