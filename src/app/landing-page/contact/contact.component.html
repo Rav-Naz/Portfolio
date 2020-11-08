@@ -22,14 +22,19 @@
             </div>
         </div>
         <div class="contact">
-            <div class="contact-grid">
-                <input placeholder="Your email" class="contact-form contact-form--email baloo">
-                <textarea style="resize: none;" placeholder="Message" class="contact-form contact-form--message baloo"></textarea>
-                <button class="las baloo contact-button">
-                  <span>Send </span>
-                  <i class="las contact-button-send">&#xf1d8;</i>
+            <form #newContactForm="ngForm" class="contact-grid">
+                <ng-container *ngIf="!isSended">
+                    <input required placeholder="Your email" [disabled]="isSended" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" autocomplete="email" class="contact-form contact-form--email baloo" #email="ngModel" [(ngModel)]="_email" [ngModelOptions]="{standalone: true}">
+                    <textarea required style="resize: none;" [disabled]="isSended" minlength="1" placeholder="Message" class="contact-form contact-form--message baloo" #message="ngModel" [(ngModel)]="_message" [ngModelOptions]="{standalone: true}"></textarea>
+                </ng-container>
+                <ng-container *ngIf="isSended">
+                    <h1 class="contact-thanks" [@thanks]="isSended ? 'thanks' : 'void'">Thanks for your message!<br><span class="contact-thanks--2 baloo">I will respond as soon as I am possible.</span></h1>
+                </ng-container>
+                <button class="las baloo contact-button" [disabled]="!newContactForm.valid || !isEmailValid || !isMessageValid || isSended" (click)="send()">
+                  <span>{{isSended ? 'Sended' : 'Send'}} </span>
+                  <i class="las contact-button-send" id="paper-plane" [@send]="isSended ? 'send' : 'void'">&#xf1d8;</i>
                 </button>
-            </div>
+            </form>
         </div>
     </div>
 </section>

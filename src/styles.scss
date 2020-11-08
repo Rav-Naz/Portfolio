@@ -18,6 +18,10 @@ body {
     height: 100vh;
     background-color: $color-grey-4;
     color: $color-white;
+     ::selection {
+        background: rgba($color: $color-grey-0, $alpha: .2)
+        /* WebKit/Blink Browsers */
+    }
 }
 
 .days {
