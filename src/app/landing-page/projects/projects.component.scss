@@ -24,6 +24,7 @@
 }
 
 .project {
+    z-index: 2;
     grid-row: 2;
     cursor: pointer;
     transition: .5s all;
@@ -83,4 +84,8 @@
             }
         }
     }
+}
+
+.z {
+    z-index: 1;
 }

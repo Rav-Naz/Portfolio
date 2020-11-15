@@ -1,9 +1,12 @@
 <section class="main">
     <div class="main-grid">
         <h1 class="main-title">What I have <span class="main-title-blue">developed?</span></h1>
-        <app-project class="project project--left" [project]="list[projectPosition(1)]" (click)="actualIndex = actualIndex - 1"></app-project>
-        <app-project class="project project--center" [project]="list[projectPosition(0)]"></app-project>
-        <app-project class="project project--right" [project]="list[projectPosition(-1)]" (click)="actualIndex = actualIndex + 1"></app-project>
+        <app-project *ngIf="!animationDirection" class="project project--left" [project]="list[projectPosition(1)]" (click)="actualIndex = actualIndex - 1" id="left"></app-project>
+        <app-project *ngIf="animationDirection" class="project project--left z" [project]="list[projectPosition(1)]" id="left-z"></app-project>
+        <app-project *ngIf="!animationDirection" class="project project--center" [project]="list[projectPosition(0)]" id="center"></app-project>
+        <app-project [@slide]="animationDirection" *ngIf="animationDirection" class="project project--center z" [project]="list[projectPosition(0)]" id="center-z"></app-project>
+        <app-project *ngIf="!animationDirection" class="project project--right" [project]="list[projectPosition(-1)]" (click)="actualIndex = actualIndex + 1" id="right"></app-project>
+        <app-project *ngIf="animationDirection" class="project project--right z" [project]="list[projectPosition(-1)]" id="right-z"></app-project>
         <button class="project-button project-button--back" (click)="actualIndex = actualIndex - 1"><i class="las">&#xf104;</i></button>
         <button class="project-button project-button--forward" (click)="actualIndex = actualIndex + 1"><i class="las">&#xf105;</i></button>
     </div>
